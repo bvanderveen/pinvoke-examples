@@ -1,0 +1,8 @@
+A small example of how to build a shared library on OS X and P/Invoke it from Mono.
+
+I experienced some nasty gotchas whilst making this. Mono kept giving me DllNotFoundException
+and I almost kicked something. So I set the environment variable MONO_LOG_LEVEL=debug, and I 
+could see that indeed mono was finding the dylib, but was complaining that the architecture 
+wrong. So I added the -m32 flag to the compile and link steps and it worked like a charm
+
+Knock yourself out.
